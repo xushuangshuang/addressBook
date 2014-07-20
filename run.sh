@@ -1,5 +1,9 @@
 #!/bin/sh
 
-set e
+set -e
 
-clean.sh && compile.sh && deploy.sh
+clean.sh 
+
+compile.sh 
+
+deploy.sh
