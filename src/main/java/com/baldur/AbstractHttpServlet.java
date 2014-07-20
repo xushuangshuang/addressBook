@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AbstractHttpServlet extends HttpServlet
 {
-    public void creatMember(HttpServletRequest req)
+    public Member creatMember(HttpServletRequest req)
     {
         Member member = new Member();
 
@@ -40,6 +40,7 @@ public class AbstractHttpServlet extends HttpServlet
             int job_level = Integer.valueOf(parmJob_level);
             member.setJobLevel(job_level);
         }
+        return member;
     }
     public void show(HttpServletRequest req, HttpServletResponse resp,
             String page) 
