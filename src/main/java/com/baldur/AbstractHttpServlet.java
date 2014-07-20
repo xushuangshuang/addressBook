@@ -2,6 +2,9 @@ package com.baldur;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import javax.servlet.http.HttpServletResponse;
 
 public class AbstractHttpServlet extends HttpServlet
 {
@@ -38,4 +41,13 @@ public class AbstractHttpServlet extends HttpServlet
             member.setJobLevel(job_level);
         }
     }
+    public void show(HttpServletRequest req, HttpServletResponse resp,
+            String page) 
+        throws IOException , ServletException
+    {
+         getServletContext()
+             .getRequestDispatcher("/jsp/" + page + ".jsp")
+             .forward(req, resp);
+    } 
+
 }
