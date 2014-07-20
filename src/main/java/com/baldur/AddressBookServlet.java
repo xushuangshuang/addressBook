@@ -6,12 +6,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-public class AddressBookServlet extends HttpServlet
+public class AddressBookServlet extends AbstractHttpServlet
 {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) 
         throws IOException , ServletException
     {
-        resp.getWriter().println("测试Servlet成功");        
+               
 
     }
 
