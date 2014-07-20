@@ -11,8 +11,10 @@ public class AddressBookServlet extends AbstractHttpServlet
     public void doGet(HttpServletRequest req, HttpServletResponse resp) 
         throws IOException , ServletException
     {
-               
-
+              getServletContext()
+                  .getRequestDispatcher("/jsp/creat.jsp")
+                  .forward(req, resp);
+                 
     }
 
 }
