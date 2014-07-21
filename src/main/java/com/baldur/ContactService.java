@@ -2,15 +2,16 @@ package com.baldur;
 
 public class ContactService
 {
+    SqlService sqlService;
     public ContactService()
     {
-        ContactDao contactDao = new ContactDao();
+        sqlService = new SqlService();
     }
 
     public boolean save(Member member)
     {
         String username = member.getUsername();
-        boolean saveResult = contactDao.save(member);
+        boolean saveResult = sqlService.save(member);
         return saveResult;
     }
 
