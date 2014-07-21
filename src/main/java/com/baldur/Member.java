@@ -12,7 +12,16 @@ public class Member
     private String groups;
     private String job;
     private int job_level;
+    private Long id;
     
+    public void setId(Long id)
+    {
+        this.id = id;
+    }   
+    public Long getId()
+    {
+        return id;
+    } 
     public void setJob(String job)
     {
         this.job = job;
