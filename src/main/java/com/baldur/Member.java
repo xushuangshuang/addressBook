@@ -26,7 +26,7 @@ public class Member
     {
         this.job = job;
     }
-    public String getjob()
+    public String getJob()
     {
         return job;
     }
