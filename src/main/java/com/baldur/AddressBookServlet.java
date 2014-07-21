@@ -16,8 +16,8 @@ public class AddressBookServlet extends AbstractHttpServlet
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
         throws IOException, ServletException
     {
-        Member member = creatMember();
-        ContactService contactService = new ContactService(member);
+        Member member = creatMember(req);
+        ContactService contactService = new ContactService();
         boolean parmSave = contactService.save(member);
         if(parmSave)
         {
