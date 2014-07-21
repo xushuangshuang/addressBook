@@ -9,10 +9,25 @@ import java.io.IOException;
 public class AddressBookServlet extends AbstractHttpServlet
 {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) 
-        throws IOException , ServletException
+        throws IOException, ServletException
     {
-              show(req, resp, "creat");
-                 
+        show(req, resp, "creat");                 
+    }
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+        throws IOException, ServletException
+    {
+        Member member = creatMember();
+        ContactService contactService = new ContactService(member);
+        boolean parmSave = contactService.save(member);
+        if(parmSave)
+        {
+            
+
+        }
+        else
+        {
+            
+        }
     }
 
 }
