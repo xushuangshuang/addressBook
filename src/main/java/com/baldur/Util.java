@@ -6,7 +6,7 @@ public class Util
 {
     public static boolean assertNull(String... param)
     {
-        for(String num : parm)
+        for(String num : param)
         { 
             if(null == num)
             {
