@@ -1,5 +1,5 @@
 CREATE TABLE `contact` (
-  `contact_id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `mobile` int(11) DEFAULT NULL,
   `vpmn` int(11) DEFAULT NULL,
