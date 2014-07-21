@@ -1,5 +1,7 @@
 package com.baldur;
 
+import java.util.Date;
+
 public class Util
 {
     public static boolean assertNull(String... param)
@@ -13,5 +15,10 @@ public class Util
             }
         }
         return true;
+    }
+    public static Member setId(Member member)
+    {
+        member.setId(new Date().getTime());
+        return member; 
     }
 }
