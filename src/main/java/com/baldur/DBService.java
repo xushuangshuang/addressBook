@@ -6,7 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class DBService
-{   
+{  
+    static final Logger logger = LoggerFactory.getLogger(DBService.class);
     private static final String jdbcURL = "jdbc:mysql://localhost/test?" 
         + "user=root&password=";
     private static final String jdbcDriver = "com.mysql.jdbc.Driver";
