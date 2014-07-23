@@ -2,6 +2,8 @@ package com.baldur;
 
 public class ContactDao
 {
+    static final Logger logger = LoggerFactory.getLogger(ContactDao.class);
+
     public boolean save(Member member, String sql)
     {
         DBService db = DBService.newInstance();
@@ -21,11 +23,12 @@ public class ContactDao
                 .setString(member.getMemo())
                 .execute();
 
-            System.out.println("SAVE  SQL " + sql);
+            logger.info("sql");
         }
         catch(Exception e)
         {
             System.out.println(e);
+            logger.error("SAVE SQL :" + e);
             return false;
         }
         return true;
