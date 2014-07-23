@@ -9,7 +9,8 @@ public class DBService
 {  
     static final Logger logger = LoggerFactory.getLogger(DBService.class);
     private static final String jdbcURL = "jdbc:mysql://localhost/test?" 
-        + "user=root&password=";
+       +  "user=root&password=" 
+       + "&useUnicode=true&characterEncoding=utf-8";
     private static final String jdbcDriver = "com.mysql.jdbc.Driver";
     private Connection conn = null;    
     private PreparedStatement  pstmt = null;
@@ -26,18 +27,21 @@ public class DBService
     {
         pstmt.setString(paremtIndex, param);
         paremtIndex++;
+        logger.info(param);
         return this;
     }
     public DBService setInt(int param) throws SQLException
     {
         pstmt.setInt(paremtIndex, param);
         paremtIndex++;
+        logger.info(String.valueOf(param));
         return this;
     }
     public DBService setLong(Long param) throws SQLException
     {
         pstmt.setLong(paremtIndex, param);
         paremtIndex++;
+        logger.info(String.valueOf(param));
         return this;
     }
     public void execute() throws SQLException
@@ -52,7 +56,7 @@ public class DBService
         }
         catch(Exception e)
         {
-
+            logger.error(" SQL Driver :" + e);
         }
         return DriverManager.getConnection(jdbcURL);
     }
@@ -66,10 +70,8 @@ public class DBService
         }
         catch(Exception e)
         {
-            
+           logger.error("SQL connection :" + e); 
         }
         return db;
-
     }
-
 }
