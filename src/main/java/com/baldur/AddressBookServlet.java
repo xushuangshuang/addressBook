@@ -20,13 +20,12 @@ public class AddressBookServlet extends AbstractHttpServlet
         ContactService contactService = new ContactService();
         boolean parmSave = contactService.save(member);
         if(parmSave)
-        {
-            
-
+        {            
+            show(req, resp, "creatFail");
         }
         else
         {
-            
+            show(req, resp, "creatSuccess");
         }
     }
 
