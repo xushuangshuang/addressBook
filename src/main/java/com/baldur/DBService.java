@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class DBService
 {  
@@ -13,9 +14,42 @@ public class DBService
        + "&useUnicode=true&characterEncoding=utf-8";
     private static final String jdbcDriver = "com.mysql.jdbc.Driver";
     private Connection conn = null;    
-    private PreparedStatement  pstmt = null;
+    private PreparedStatement pstmt = null;
+
     private int paremtIndex;
 
+    public void close()
+    {
+        close(conn);
+        conn = null;
+
+        close(pstmt);
+        pstmt = null;
+    }
+    public void close(AutoCloseable obj)
+    {
+        if(obj != null)
+        {
+            try
+            {
+                obj.close();
+            }
+            catch(Exception e)
+            {
+                logger.error("CLOSE :", e);
+            }
+        }
+    }
+    public ResultSet executeQuery()throws SQLException
+    {
+        return pstmt.executeQuery();
+    }
+    public ResultSet executeQuery(String sql) throws SQLException
+    {
+        prepare(sql);
+        logger.info(sql);
+        return executeQuery();
+    }
     public DBService prepare(String sql) throws SQLException
     {
         pstmt = conn.prepareStatement(sql);
