@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
-public class AbstractHttpServlet extends HttpServlet
+public abstract class AbstractHttpServlet extends HttpServlet
 {
     public Member creatMember(HttpServletRequest req)
     {
