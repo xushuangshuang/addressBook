@@ -11,7 +11,8 @@ public class AddressBookListServlet extends AbstractHttpServlet
         throws IOException, ServletException
     {
         ContactListService list = new ContactListService();
-        list.show();
+        List result = list.show();
+        req.setAttribute("AllList", result)
         show(req, resp, "list");
     }
 }
