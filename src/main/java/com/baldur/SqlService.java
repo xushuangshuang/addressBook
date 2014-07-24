@@ -1,5 +1,7 @@
 package com.baldur;
 
+import java.util.List;
+
 public class SqlService
 {
     ContactDao contactDao;
