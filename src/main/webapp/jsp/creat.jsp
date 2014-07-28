@@ -5,7 +5,7 @@
     </head>
     <body>
         <label>新增用户</label>
-        <form action="contact" method="POST">
+        <form action="creat" method="POST">
             <label>username</label>
             <input type="text" name="username" ></br>
             <label>mebile</label>
