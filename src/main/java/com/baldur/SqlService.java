@@ -20,7 +20,7 @@ public class SqlService
     }
     public List findAll()
     {
-        String find_all_sql = "SELECT * FROM contact_guest";
+        String find_all_sql = "SELECT * FROM contact";
         return contactDao.findAll(find_all_sql);
 
     }
