@@ -1,6 +1,7 @@
 <%@page pageEncoding="utf-8" contentType="text/html;charset=utf-8"%>
 <html>
     <head>
+        <meta http-equiv="refresh" content="2; URL=creat" />
         <title>creat fail</title>
     </head>
     <body>
