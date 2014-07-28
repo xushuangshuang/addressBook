@@ -19,14 +19,24 @@
       <filter-name>filterEncoding</filter-name>
       <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
   <servlet>
-    <servlet-name>contact</servlet-name>
+    <servlet-name>contactCreate</servlet-name>
     <servlet-class>com.baldur.AddressBookServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
-    <servlet-name>contact</servlet-name>
-    <url-pattern>/contact</url-pattern>
+    <servlet-name>contactCreate</servlet-name>
+    <url-pattern>/contact/creat</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>contactList</servlet-name>
+    <servlet-class>com.baldur.AddressBookListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>contactList</servlet-name>
+    <url-pattern>/contact/list</url-pattern>
+  </servlet-mapping>  
+
   
 </web-app>
