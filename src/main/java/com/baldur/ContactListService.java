@@ -9,7 +9,7 @@ public class ContactListService
     {
         sqlService = new SqlService();
     }
-    public List show()
+    public List<Member> show()
     {
        return sqlService.findAll();
     }

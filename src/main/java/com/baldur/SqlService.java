@@ -18,7 +18,7 @@ public class SqlService
         boolean result = contactDao.save(parmMember, save_sql);
         return result;
     }
-    public List findAll()
+    public List<Member> findAll()
     {
         String find_all_sql = "SELECT * FROM contact";
         return contactDao.findAll(find_all_sql);

@@ -19,25 +19,26 @@ public class ContactDao
         list = new ArrayList();
     }
 
-    public List findAll(String sql)
+    public List<Member> findAll(String sql)
     {
        try
        {
             result = db.executeQuery(sql);
             while(result.next())
             {
-                 Map map = new HashMap();
-                 map.put("name", result.getString("name"));
-                 map.put("mobile", result.getInt("mobile"));
-                 map.put("vpmn", result.getInt("vpmn"));
-                 map.put("email", result.getString("email"));
-                 map.put("home_address", result.getString("home_address"));
-                 map.put("office_address", result.getString("office_address"));
-                 map.put("groups", result.getString("groups"));
-                 map.put("job", result.getString("job"));
-                 map.put("job_level", result.getInt("job_level"));
-                 map.put("memo", result.getString("memo"));
-                 list.add(map);
+                 Member member = new Member();
+
+                 member.setUsername(result.getString("name"));
+                 member.setMobile(result.getLong("mobile"));
+                 member.setVpmn(result.getInt("vpmn"));
+                 member.setEmail(result.getString("email"));
+                 member.setHomeAddress(result.getString("home_address"));
+                 member.setOfficeAddress(result.getString("office_address"));
+                 member.setGroups(result.getString("groups"));
+                 member.setJob(result.getString("job"));
+                 member.setJobLevel(result.getInt("job_level"));
+                 member.setMemo(result.getString("memo"));
+                 list.add(member);
             }
        }
        catch(Exception e)

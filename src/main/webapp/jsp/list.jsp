@@ -1,8 +1,8 @@
-<%@page import="java.util.List,java.util.Map"%>
-<%@taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"%>
-<%@include file="header.jsp" %>
+﻿<%@ page import="java.util.List,com.baldur.Member"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="header.jsp" %>
 <%
-    List<Map> list = (List<Map>)request.getAttribute("AllList");
+    List<Member> list = (List<Member>)request.getAttribute("AllList");
 %>
 <html>
     <head>
