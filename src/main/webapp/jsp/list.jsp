@@ -1,16 +1,18 @@
 <%@page import="java.util.List,java.util.Map"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@include file="header.jsp" %>
 <%
-    List<Map> list = (List<Map>)getAttribute("AllList");
+    List<Map> list = (List<Map>)request.getAttribute("AllList");
 %>
 <html>
     <head>
         <title>
             list
-        <title>
+        </title>
     </head>
     <body>
         <table>
+            <h1>联系人列表</h1>
             <tr>
                 <td>姓名</td>
                 <td>职位</td>
