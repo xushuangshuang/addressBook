@@ -21,11 +21,11 @@ public class AddressBookServlet extends AbstractHttpServlet
         boolean parmSave = contactService.save(member);
         if(parmSave)
         {            
-            show(req, resp, "creatFail");
+            show(req, resp, "creatSuccess");
         }
         else
         {
-            show(req, resp, "creatSuccess");
+            show(req, resp, "creaFail");
         }
     }
 

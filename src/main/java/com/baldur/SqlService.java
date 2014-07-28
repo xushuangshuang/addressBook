@@ -11,7 +11,7 @@ public class SqlService
     }
     public boolean save(Member member)
     {
-        String save_sql = "INSERT INTO contact_guest (contact_id, name, mobile,"
+        String save_sql = "INSERT INTO contact (contact_id, name, mobile,"
             +" vpmn, email, home_address, office_address, groups, job, " 
             + " job_level,memo) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Member parmMember = Util.setId(member);
