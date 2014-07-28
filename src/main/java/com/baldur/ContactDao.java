@@ -31,7 +31,7 @@ public class ContactDao
                  map.put("mobile", result.getInt("mobile"));
                  map.put("vpmn", result.getInt("vpmn"));
                  map.put("email", result.getString("email"));
-                 map.put("home_address", result.getString("home_addressm"));
+                 map.put("home_address", result.getString("home_address"));
                  map.put("office_address", result.getString("office_address"));
                  map.put("groups", result.getString("groups"));
                  map.put("job", result.getString("job"));
